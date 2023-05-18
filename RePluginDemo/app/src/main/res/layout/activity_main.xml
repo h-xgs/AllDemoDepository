@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/install_plugin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="加载插件" />
+
+    <Button
+        android:id="@+id/start_plugin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="启动插件" />
+
+    <Button
+        android:id="@+id/unInstall_plugin"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:text="卸载插件" />
+</LinearLayout>

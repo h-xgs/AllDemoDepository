@@ -1,0 +1,41 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven {
+            url "http://maven.geelib.360.cn/nexus/repository/replugin/"
+        }
+    }
+    dependencies {
+
+        //更改gradle版本
+        classpath 'com.android.tools.build:gradle:3.5.4'
+
+        //这个是用于生成宿主app的gradle插件
+        classpath 'com.qihoo360.replugin:replugin-host-gradle:3.0.0'
+
+        //这个是用于生成插件app的gradle插件
+        classpath "com.qihoo360.replugin:replugin-plugin-gradle:3.0.0"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven {
+            url "http://maven.geelib.360.cn/nexus/repository/replugin/"
+            allowInsecureProtocol = true
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

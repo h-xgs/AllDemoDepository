@@ -1,0 +1,8 @@
+include ':CustomDialogDemo'
+include ':FileUtilTestDemo'
+include ':FiveChess'
+include ':LocationDemo'
+include ':ReadContactsDemo'
+include ':VideoDemo'
+include ':ViewPager2Demo'
+rootProject.name = "AllDemoDepository"

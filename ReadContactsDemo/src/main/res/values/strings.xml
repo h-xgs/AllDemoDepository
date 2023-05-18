@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ReadContactsDemo</string>
+    <string name="title_contacts">通讯录</string>
+</resources>
