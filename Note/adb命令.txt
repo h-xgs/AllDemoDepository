@@ -1,0 +1,25 @@
+1、查看应用安装位置：
+	adb shell pm path +包名
+2、查看当前页面：
+	adb shell dumpsys window w |findstr mSurface=Surface(name=
+	adb shell dumpsys window w |findstr \/ |findstr name=
+3、发送广播：
+	adb shell am broadcast -a +名称
+4、启动某个应用：	
+	adb shell am start -n +包名
+5、抓取日志：
+	adb logcat -v time > D:Desktop\error.log
+6、命令remount解锁：
+	开发者模式OEN解锁
+	adb reboot bootloader
+	fastboot flashing unlock
+	长按音量+键
+	fastboot reboot
+	adb root
+	adb disable-verity
+7、安装应用：
+	adb install +apk路径
+
+*8、查看apk包名
+	aapt dump badging +apk路径
+	
