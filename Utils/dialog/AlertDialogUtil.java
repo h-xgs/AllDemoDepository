@@ -48,10 +48,18 @@ public class AlertDialogUtil {
             TextView dialogMessage = view.findViewById(R.id.dialog_message);
             Button cancelButton = view.findViewById(R.id.dialog_cancel_button);
             Button okButton = view.findViewById(R.id.dialog_ok_button);
-            dialogTitle.setText(title);
-            dialogMessage.setText(msg);
-            cancelButton.setText(cancelButtonText);
-            okButton.setText(okButtonText);
+            if (title != null) {
+                dialogTitle.setText(title);
+            }
+            if (msg != null) {
+                dialogMessage.setText(msg);
+            }
+            if (cancelButtonText != null) {
+                cancelButton.setText(cancelButtonText);
+            }
+            if (okButtonText != null) {
+                okButton.setText(okButtonText);
+            }
             cancelButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -71,11 +79,11 @@ public class AlertDialogUtil {
                 }
             });
             mAlertDialog.setView(view);
-            mAlertDialog.show();
-            float scale = context.getResources().getDisplayMetrics().density;
-            int width = (int) (458 * scale + 0.5f);
-            mAlertDialog.getWindow().setLayout(width, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
             mAlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.custom_dialog_bg);
+            mAlertDialog.show();
+            /*float scale = context.getResources().getDisplayMetrics().density;
+            int width = (int) (458 * scale + 0.5f);
+            mAlertDialog.getWindow().setLayout(width, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);*/
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -79,11 +79,11 @@ public class AlertDialogUtil {
                 }
             });
             mAlertDialog.setView(view);
-            mAlertDialog.show();
-            float scale = context.getResources().getDisplayMetrics().density;
-            int width = (int) (458 * scale + 0.5f);
-            mAlertDialog.getWindow().setLayout(width, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);
             mAlertDialog.getWindow().setBackgroundDrawableResource(R.drawable.custom_dialog_bg);
+            mAlertDialog.show();
+            /*float scale = context.getResources().getDisplayMetrics().density;
+            int width = (int) (458 * scale + 0.5f);
+            mAlertDialog.getWindow().setLayout(width, android.widget.LinearLayout.LayoutParams.WRAP_CONTENT);*/
         } catch (Exception e) {
             e.printStackTrace();
         }

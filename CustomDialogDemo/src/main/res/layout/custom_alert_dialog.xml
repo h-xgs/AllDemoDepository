@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="458dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/custom_dialog_bg"
     android:orientation="vertical">
@@ -33,12 +33,13 @@
         android:layout_marginTop="65dp"
         android:layout_marginBottom="36dp"
         android:gravity="bottom|center_horizontal"
-        android:paddingHorizontal="23dp">
+        android:paddingHorizontal="30dp">
 
         <Button
             android:id="@+id/dialog_cancel_button"
-            android:layout_width="195dp"
+            android:layout_width="0dp"
             android:layout_height="45dp"
+            android:layout_weight="1"
             android:background="@drawable/custom_dialog_button_bg"
             android:stateListAnimator="@null"
             android:text="@android:string/cancel"
@@ -47,13 +48,14 @@
             android:textStyle="bold" />
 
         <Space
-            android:layout_width="23dp"
+            android:layout_width="30dp"
             android:layout_height="match_parent" />
 
         <Button
             android:id="@+id/dialog_ok_button"
-            android:layout_width="195dp"
+            android:layout_width="0dp"
             android:layout_height="45dp"
+            android:layout_weight="1"
             android:background="@drawable/custom_dialog_button_bg"
             android:stateListAnimator="@null"
             android:text="@android:string/ok"
