@@ -2,6 +2,7 @@ package com.android.customdialogdemo;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -13,16 +14,31 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        findViewById(R.id.show_toast).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "Toast", Toast.LENGTH_SHORT).show();
-            }
-        });
         findViewById(R.id.show_custom_dialog).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDialog();
+            }
+        });
+        findViewById(R.id.show_custom_dialog2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new CustomAlertDialog(MainActivity.this)
+                        .setTitle("标题")
+                        .setMessage("内容")
+                        .setNegativeButton("消极按钮", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(MainActivity.this, "点击了取消按钮", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .setPositiveButton("积极按钮", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Toast.makeText(MainActivity.this, "点击了确认按钮", Toast.LENGTH_SHORT).show();
+                            }
+                        })
+                        .show();
             }
         });
         findViewById(R.id.show_dialog).setOnClickListener(new View.OnClickListener() {
@@ -38,7 +54,12 @@ public class MainActivity extends Activity {
                         .show();
             }
         });
-
+        findViewById(R.id.show_toast).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "Toast", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void showDialog() {
