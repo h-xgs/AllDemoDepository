@@ -1,10 +1,13 @@
-package com.hb.android.tapplication.Utils;
+package com.hb.android.readcontactsdemo.utils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Build;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * 申请权限的工具类，实现方法：
@@ -24,17 +27,19 @@ public class PermissionsUtil {
         boolean isHasPermissions = true;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             int numPermissionsNeedRequest = 0;
-            String[] permissionsNeedRequest = null;
+            ArrayList<String> permissionsNeedRequest = new ArrayList<>();
             for (String s : permissionList) {
+                //LogUtil.logD("checkAndApplyPermissions " + numPermissionsNeedRequest + ", s:" + s);
                 if (activity.checkSelfPermission(s) != PackageManager.PERMISSION_GRANTED) {
                     isHasPermissions = false;
                     numPermissionsNeedRequest++;
-                    permissionsNeedRequest = new String[numPermissionsNeedRequest];
-                    permissionsNeedRequest[numPermissionsNeedRequest - 1] = s;
+                    permissionsNeedRequest.add(s);
                 }
             }
-            if (permissionsNeedRequest != null) {
-                activity.requestPermissions(permissionsNeedRequest, 1);
+            if (!permissionsNeedRequest.isEmpty()) {
+                // LogUtil.logW("checkAndApplyPermissions" + permissionsNeedRequest.toString());
+                String[] permissionsArray = permissionsNeedRequest.toArray(new String[numPermissionsNeedRequest]);
+                activity.requestPermissions(permissionsArray, 1);
             }
         }
         return isHasPermissions;
