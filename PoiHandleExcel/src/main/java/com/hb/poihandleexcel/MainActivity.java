@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                     list.add(new MyBean("4", "a4", ExcelFileUtils.getNowTime()));
                     list.add(new MyBean("5", "a5", ExcelFileUtils.getNowTime()));
                     ExcelFileUtils.download(MainActivity.this, list, fileName);
+                    rt.setText("");
                 }
             }
         });
