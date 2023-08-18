@@ -26,11 +26,26 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * 读写Excel的工具类
+ * 注意：如数据量较大，请在子线程中使用download和readExcel方法！
+ * 工具方法：
+ * download(Context, List, String)，把集合里的数据导出到Excel表格。
+ * readExcel(String)，从Excel中读取不带表头的数据返回List集合。
+ * getNowTime()，返回"yyyy-MM-dd HH:mm:ss"形式的当前时间
+ */
 public class ExcelFileUtils {
 
     private static final String TAG = "ExcelFileUtils测试";
     private static final String sheetName = "Sheet1";
 
+    /**
+     * 把集合里的数据导出到Excel表格
+     *
+     * @param context  context，用于显示toast提示
+     * @param list     数据集合
+     * @param fileName 文件名（不需要加扩展名，默认.xlsx）
+     */
     public static void download(Context context, @NonNull List<MyBean> list, String fileName) {
 
         Workbook wb = new XSSFWorkbook();
@@ -123,7 +138,7 @@ public class ExcelFileUtils {
         try {
             fileOutputStream = new FileOutputStream(fileResultPath);
             wb.write(fileOutputStream);
-            Toast.makeText(context, "下载成功：" + fileResultPath, Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "导出成功：" + fileResultPath, Toast.LENGTH_SHORT).show();
         } catch (FileNotFoundException e) {
             Log.e(TAG, "Download Fail FileNotFoundException" + e);
             e.printStackTrace();
@@ -146,7 +161,13 @@ public class ExcelFileUtils {
         }
     }
 
-    public static List readExcel(Context context, String fileResultPath) {
+    /**
+     * 从Excel中读取数据，返回不带表头的数据List集合
+     *
+     * @param fileResultPath 文件的绝对路径
+     * @return 数据集合
+     */
+    public static List readExcel(String fileResultPath) {
         List list = new ArrayList();
         Workbook workbook = null;
         Sheet sheet = null;
@@ -175,6 +196,12 @@ public class ExcelFileUtils {
         return list;
     }
 
+    /**
+     * 把从Excel中读出来的各类型的数据转换为string类型
+     *
+     * @param cell 单元格
+     * @return string类型的单元格的数据
+     */
     private static String getCellValueToString(Cell cell) {
         // 获取单元格值，并根据单元格的位置或特定条件，将值设置到MyRowBean对象的相应属性中
         String cellValue = "";
@@ -188,6 +215,11 @@ public class ExcelFileUtils {
         return cellValue;
     }
 
+    /**
+     * 获取时间
+     *
+     * @return 返回"yyyy-MM-dd HH:mm:ss"形式的当前时间
+     */
     public static String getNowTime() {
         Date time = new Date();
         @SuppressLint("SimpleDateFormat")

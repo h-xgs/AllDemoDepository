@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String filePath = Environment.getExternalStorageDirectory().getPath();
                 String fileResultPath = filePath + File.separator + fileName + ".xlsx";
-                List list = ExcelFileUtils.readExcel(MainActivity.this, fileResultPath);
+                List list = ExcelFileUtils.readExcel(fileResultPath);
                 for (Object mb : list) {
                     Log.w("htest", "mb：" + mb);
                 }
