@@ -23,5 +23,6 @@
         <item name="android:windowMinWidthMajor">800dp</item>
         <!--背景的圆角-->
         <!--<item name="android:dialogCornerRadius" tools:targetApi="p">30dp</item>-->
+        <item name="android:windowBackground">@drawable/custom_dialog_bg</item>
     </style>
 </resources>

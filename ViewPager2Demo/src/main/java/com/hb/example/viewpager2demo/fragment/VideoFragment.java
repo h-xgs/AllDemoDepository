@@ -48,6 +48,9 @@ public class VideoFragment extends Fragment {
         return fragment;
     }
 
+    private VideoFragment() {
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

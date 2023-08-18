@@ -48,9 +48,8 @@ public class MainActivity extends Activity {
                 new AlertDialog.Builder(MainActivity.this)
                         .setTitle("标题")
                         .setMessage("内容")
-                        .setNeutralButton("中立按钮", null)
-                        .setNegativeButton("消极按钮", null)
-                        .setPositiveButton("积极按钮", null)
+                        .setNegativeButton("取消", null)
+                        .setPositiveButton("确认", null)
                         .show();
             }
         });
