@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        TextView rt = findViewById(R.id.result);
         fileName = getResources().getString(R.string.app_name) + "TestData";
 
         // 下载
@@ -46,8 +48,15 @@ public class MainActivity extends AppCompatActivity {
                 String filePath = Environment.getExternalStorageDirectory().getPath();
                 String fileResultPath = filePath + File.separator + fileName + ".xlsx";
                 List list = ExcelFileUtils.readExcel(fileResultPath);
+                if (list.size() == 0) {
+                    rt.setText("没有数据");
+                    return;
+                }
+                StringBuilder s = new StringBuilder();
                 for (Object mb : list) {
                     Log.w("htest", "mb：" + mb);
+                    s.append(mb).append("\n");
+                    rt.setText(s);
                 }
             }
         });

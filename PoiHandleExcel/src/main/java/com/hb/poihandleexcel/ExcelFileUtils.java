@@ -174,6 +174,12 @@ public class ExcelFileUtils {
         try {
             workbook = WorkbookFactory.create(new File(fileResultPath));
             sheet = workbook.getSheet(sheetName);
+            for (int i = 1; i <= sheet.getLastRowNum(); i++) {
+                Row row = sheet.getRow(i);
+                int j = 0;
+                MyBean myRowBean = new MyBean(getCellValueToString(row.getCell(j)), getCellValueToString(row.getCell(++j)), getCellValueToString(row.getCell(++j)));
+                list.add(myRowBean);
+            }
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -185,13 +191,6 @@ public class ExcelFileUtils {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }
-
-        for (int i = 1; i <= sheet.getLastRowNum(); i++) {
-            Row row = sheet.getRow(i);
-            int j = 0;
-            MyBean myRowBean = new MyBean(getCellValueToString(row.getCell(j)), getCellValueToString(row.getCell(++j)), getCellValueToString(row.getCell(++j)));
-            list.add(myRowBean);
         }
         return list;
     }
