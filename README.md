@@ -20,6 +20,6 @@ PoiHandleExcel：使用POI库读写Excel文件
 
 #### 其他：
 
-“工具类”文件夹是封装的几个方法。
+“Utils”文件夹是封装的几个方法。
 
 RePluginDemo是单独的一个项目，是RePlugin插件的简单使用。

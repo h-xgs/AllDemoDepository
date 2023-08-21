@@ -62,6 +62,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        String i ="_iD inTegER prImArY KeY autoInCREmeNT NOt NulL。";
+        Log.w("htest MainActivity", "onCreate: " + TextUtils.toCamelCaseNoSpace(i));
+        Log.w("htest MainActivity", "onCreate: " + TextUtils.toCamelCase(i));
+        Log.w("htest MainActivity", "onCreate: " + TextUtils.toUpperCase(i));
+        Log.w("htest MainActivity", "onCreate: " + TextUtils.toLowerCase(i));
+
     }
 
     @Override
