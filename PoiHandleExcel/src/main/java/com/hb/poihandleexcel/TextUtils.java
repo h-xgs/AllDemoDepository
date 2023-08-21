@@ -40,8 +40,8 @@ public class TextUtils {
         StringBuilder stringBuilder = new StringBuilder();
         boolean capitalizeNextChar = true;
         for (char c : input.toCharArray()) {
-            if (Character.isWhitespace(c)) {
-                // 遇到空格，将capitalizeNextChar标记为true
+            if (Character.isWhitespace(c) || c == '.') {
+                // 遇到空格或者点，将capitalizeNextChar标记为true
                 capitalizeNextChar = true;
                 stringBuilder.append(c);
             } else {
@@ -61,8 +61,8 @@ public class TextUtils {
      */
     public static String toCamelCaseNoSpace(String input) {
         StringBuilder stringBuilder = new StringBuilder();
-        // 将字符串用空格分成一个一个的单词
-        String[] words = input.split("\\s");
+        // 将字符串用空格或者点分成一个一个的单词
+        String[] words = input.split("[.\\s]+");
         for (String word : words) {
             if (!word.isEmpty()) { // 跳过空单词
                 // 将首字母大写，其余字符小写，拼接到结果中
