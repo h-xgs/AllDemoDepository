@@ -16,6 +16,8 @@ ViewPager2Demo：简单的ViewPager2的使用，实现仿抖音短视频效果�
 
 PoiHandleExcel：使用POI库读写Excel文件
 
+MediaPlayerServiceDemo： 使用前台服务的音乐播放器demo
+
 
 
 #### 其他：
