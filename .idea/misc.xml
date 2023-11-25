@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/MyDemoProjects/AllDemoDepository/CustomView/src/main/res/drawable/back_bg.xml" value="0.1255" />
+        <entry key="..\:/AndroidStudioProjects/MyDemoProjects/AllDemoDepository/CustomView/src/main/res/layout/activity_main.xml" value="0.1679054054054054" />
+        <entry key="..\:/AndroidStudioProjects/MyDemoProjects/AllDemoDepository/CustomView/src/main/res/layout/title.xml" value="0.1679054054054054" />
+        <entry key="..\:/AndroidStudioProjects/MyDemoProjects/AllDemoDepository/CustomView/src/main/res/layout/view_customtitle.xml" value="0.16722972972972974" />
         <entry key="..\:/AndroidStudioProjects/MyDemoProjects/AllDemoDepository/MediaPlayerServiceDemo/src/main/res/drawable/editext_selector.xml" value="0.10902777777777778" />
         <entry key="..\:/AndroidStudioProjects/MyDemoProjects/AllDemoDepository/MediaPlayerServiceDemo/src/main/res/drawable/shape_edit_focus.xml" value="0.10902777777777778" />
         <entry key="..\:/AndroidStudioProjects/MyDemoProjects/AllDemoDepository/MediaPlayerServiceDemo/src/main/res/drawable/shape_edit_normal.xml" value="0.10902777777777778" />
@@ -19,5 +23,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1679054054054054" />
+      </ProjectState>
+    </option>
   </component>
 </project>

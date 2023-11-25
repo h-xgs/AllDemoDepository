@@ -2,6 +2,8 @@
 
 CustomDialogDemo：自定义弹窗demo；
 
+CustomView：安卓进阶之光里面的自定义View；
+
 FileUtilTestDemo：FileUtil工具类的测试demo；
 
 FiveChess：五子棋demo；
