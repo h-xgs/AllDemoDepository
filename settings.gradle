@@ -6,6 +6,7 @@ include ':LocationDemo'
 include ':MediaPlayerServiceDemo'
 include ':PoiHandleExcel'
 include ':ReadContactsDemo'
+include ':SoLibDemo'
 include ':VideoDemo'
 include ':ViewPager2Demo'
 rootProject.name = "AllDemoDepository"

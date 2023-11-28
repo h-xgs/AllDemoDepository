@@ -12,6 +12,8 @@ LocationDemo：安卓原生获取位置信息demo；
 
 ReadContactsDemo：读取联系人列表demo；
 
+SoLibDemo：简单的自己编写.so库的demo
+
 VideoDemo：简单的播放视频的demo；
 
 ViewPager2Demo：简单的ViewPager2的使用，实现仿抖音短视频效果。
