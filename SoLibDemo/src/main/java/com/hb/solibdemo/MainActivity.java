@@ -17,9 +17,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         TextView t = findViewById(R.id.tv);
-        t.setText(getMessageFromLibrary());
+        t.setText(getMessageFromLibrary(new Object()));
     }
 
-    private native String getMessageFromLibrary();
+    private native String getMessageFromLibrary(Object o);
 
 }
