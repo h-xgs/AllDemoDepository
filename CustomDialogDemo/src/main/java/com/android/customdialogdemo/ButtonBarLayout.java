@@ -48,7 +48,7 @@ public class ButtonBarLayout extends LinearLayout {
         super(context, attrs);
 
         final TypedArray ta = context.obtainStyledAttributes(attrs, R.styleable.ButtonBarLayout);
-        mAllowStacking = ta.getBoolean(R.styleable.ButtonBarLayout_allowStacking, true);
+        //mAllowStacking = ta.getBoolean(R.styleable.ButtonBarLayout_allowStacking, true);
         ta.recycle();
     }
 

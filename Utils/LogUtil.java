@@ -11,7 +11,7 @@ import java.util.Date;
  * <p>若不传入TAG和Context，则TAG默认为"测试"
  * <p>若不传入TAG但传入Context，则TAG默认为"context类名+测试"
  */
-public class LogUtil {
+public final class LogUtil {
     /**
      * 日志总开关
      */
@@ -21,7 +21,6 @@ public class LogUtil {
      * 把日志输出到缓存文件
      */
     public static boolean isOutputLog = false;
-
 
     public static void logV(String msg) {
         String t = "测试";
